@@ -14,13 +14,20 @@ function convertText()
     } 
     catch (error) {
         console.log("No input text");
+        return;
     }
     
     outputText = inputText.replace("Items", "Videos");
     outputText = outputText.replace("Download", "main.m3u8");
+    try {
+        urlTextOutput.select();
+        urlTextOutput.value = outputText;
+    } 
+    catch (error) {
+        console.log("No output text");
+        return;
+    }
 
-    urlTextOutput.select();
-    urlTextOutput.value = outputText;
 }
 
 function copyText()
